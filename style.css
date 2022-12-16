@@ -1,0 +1,597 @@
+body {
+    font-family: 'Montserrat';
+    font-style: normal;
+    color: #050C33;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+.container {
+    margin: 0 10px 0 10px;
+}
+
+/*----time----*/
+
+.time .time_title {
+    font-weight: 700;
+    font-size: 21px;
+    line-height: 20px;
+
+    margin-top: 50px;
+    padding-bottom: 50px;
+}
+
+.time .time_content {
+    display: flex;
+    flex-direction: column;
+}
+
+.time .time_block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 60px;
+}
+
+.time .time_block_title {
+    font-weight: 700;
+    font-size: 30px; 
+    line-height: 51px;
+
+    margin-bottom: 10px;
+}
+
+.time .time_text {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 18px;
+    opacity: 0.7;
+}
+
+
+/*----team----*/
+
+.team .team_title {
+    text-align: center;
+    margin-bottom: 5px;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 25px;
+}
+
+.team .team_content {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+
+.team .team_block {
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    width: 50%;
+    padding: 10px;
+}
+
+.team .team_block_title {
+
+    font-weight: 700;
+    font-size: 15px;
+    line-height: 18px;
+
+    margin-bottom: 7px;
+}
+
+.team img {
+    width: 100%;
+    margin-bottom: 7px;
+}
+
+.team .team_text {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 14px;
+}
+
+.team button {
+    background: white;
+    margin: 10px auto 60px auto;
+    display: flex;
+    justify-content: center;
+    padding: 7px 30px;
+
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 12px;
+
+
+    border: 1px solid #050C33; /*прозрачность*/
+    border-radius: 5px;
+}
+
+
+
+/*---cases----*/
+.cases .cases_title {
+    text-align: center;
+    margin-bottom: 5px;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 25px;
+}
+
+.cases .cases_content {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.cases .cases_block_title {
+    font-weight: 700;
+    font-size: 15px;
+    line-height: 18px;
+
+    padding-right: 30px;
+    margin-bottom: 10px;
+}
+
+.cases .cases_block_2, .cases_block_3, .cases_block_4{
+    position: relative;
+}
+
+.cases .cases_title_3, .cases_title_4 {
+    position: absolute;
+    top: 85px;
+    left: 10px;
+}
+
+.cases .cases_title_2 {
+    position: absolute;
+    top: 130px;
+    left: 10px;
+}
+
+.cases .date_3,.date_4 {
+    position: absolute;
+    top: 175px;
+    left: 10px;
+    color: white;
+}
+
+
+.cases .white_text {
+    color: white;
+}
+
+
+.cases .date {
+    font-size: 13px;
+    line-height: 14px;
+    opacity: 0.4;
+    margin-bottom: 20px;
+}
+
+.cases .cases_text {
+    font-size: 12px;
+    line-height: 14px;
+    opacity: 0.7;
+    margin-bottom: 30px;
+}
+
+.cases img {
+    border-radius: 5px;
+    object-fit: cover;
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.cases .img_one img {
+    height: 150px;
+}
+
+.cases .img_two img, .img_three img {
+    height: 200px;
+}
+
+.cases .just_text {
+    font-size: 12px;
+    line-height: 14px;
+}
+.cases a {
+    color: #3f52bd;
+    text-decoration: none;
+}
+
+/*---reviews----*/
+.reviews .reviews_title {
+    text-align: center;
+    margin-bottom: 5px;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 25px;
+}
+
+/*---partners----*/
+.partners .partners_title {
+    text-align: center;
+    margin-bottom: 15px;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 25px;
+    margin-top: 80px;
+}
+.partners .partners_text {
+    font-size: 16px;
+    line-height: 23px;
+    opacity: 0.7;
+    margin-bottom: 30px;
+    font-weight: 600;
+    padding-right: 30px;
+}
+
+/*----FAQ----*/
+.FAQ .FAQ_title {
+    text-align: center;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 25px;
+}
+
+.FAQ li {
+    color: gray;
+    font-weight: 600;
+    font-size: 13px;
+    line-height: 13px;
+}
+
+.FAQ .FAQ_content {
+    display: flex;
+    flex-direction: column;
+}
+
+.FAQ li {
+    padding: 10px;
+}
+.FAQ .question {
+    color: #050C33;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 18px;
+}
+
+.FAQ .answer {
+    padding-top: 10px;
+    color: #050C33;
+    font-size: 16px;
+    line-height: 23px;
+    opacity: 0.7;
+}
+
+.form {
+    background-color: #040613;
+    color: white;
+}
+
+.form .form_content {
+    display: flex;
+    flex-direction: column;
+}
+.form .form_block {
+    display: flex;
+    flex-direction: column;
+}
+
+.form .form_title {
+    text-align: center;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 25px;
+    padding: 40px 40px 20px 40px;
+
+}
+
+.form .form_text{
+    opacity: 0.7;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 18px;
+    text-align: justify;
+}
+.form .form_number {
+    margin-top: 30px;
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 25px;
+}
+
+.form .form_number .phone {
+    width: 14px;
+    height: 13px;
+    margin-right: 10px;
+}
+
+.form .form_email {
+    margin-top: 10px;
+    margin-bottom: 20px;
+    text-decoration: underline;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 25px;
+}
+
+
+.form .form_email .message {
+    width: 15px;
+    height: 10px;
+    margin-right: 10px;
+}
+
+.form input, textarea{
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ffffff; 
+    background-color: #040613;
+    opacity: 0.5;
+}
+
+.form .checkbox {
+    display: flex;
+    flex-direction: row;
+}
+.form .checkbox input{
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+    background-color: #040613;
+    border: 1px solid #ffffff; 
+
+}
+.form textarea{
+    resize: none;
+    height: 100px;
+    margin-bottom: 10px;
+}
+
+.form .checkbox label{
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 25px;
+}
+
+
+
+.form button {
+    background: #F14D34;
+    border-radius: 5px;
+    border: 0 solid #ffffff;
+    padding: 20px 0;
+    margin-top: 10px;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 12px;
+    color: white;
+}
+
+
+footer {
+    padding-top: 200px;
+    background-color: #040613;
+    color: white;
+}
+
+@media screen and (min-width: 768px) { 
+    .container {
+        width: 1080px;
+        margin: 0 auto;
+    }
+
+    .time .time_content {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .time .time_block {
+        width: 27%;
+        align-items: flex-start;
+        margin-right: 100px;
+    }
+
+    .time .time_title {
+        font-weight: 700;
+        font-size: 42px;
+        line-height: 51px;
+        margin-top: 160px;
+    }
+    
+    .time .time_text {
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 22px;
+    }
+
+    .team .team_title {
+        margin-top: 160px;
+        margin-bottom: 40px;
+        font-weight: 700;
+        font-size: 42px;
+        line-height: 51px;
+    }
+
+    .team .team_block {
+        width: 33.33%;
+        padding: 40px;
+    }
+
+    .team .team_block_title {
+        margin-top: 25px;
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 22px;
+    }
+
+    .team img {
+        max-width: 280px;
+        max-height: 280px;
+    }
+    
+    .team .team_text {
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 22px;
+    }
+
+    .team button {
+        width: 260px;
+        height: 60px;
+        padding-top: 25px;
+    }
+
+    
+    
+    .cases .cases_title {
+        margin-top: 60px;
+        margin-bottom: 50px;
+        font-weight: 700;
+        font-size: 42px;
+        line-height: 51px;
+    }
+    
+    .cases .cases_block_title {
+        font-weight: 700;
+        font-size: 18px;
+        line-height: 22px;
+        width: 280px;
+        padding-left: 30px;
+    }
+
+    .cases .cases_text {
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 18px;
+        width: 300px;
+        padding-left: 30px;
+    }
+
+    .cases .date {
+        padding-left: 30px;
+    }
+
+    .cases .img_one img {
+        width: 100%;
+        height: 215px;
+    }
+
+    .cases .img_two img, .img_three img  {
+        width: 100%;
+        height: 475px;
+    }
+
+
+    .cases .cases_content {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    .cases .cases_block {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .cases .cases_block_1, .cases_block_3, .cases_block_4, .cases_block_5{
+        width: 33.33%;
+
+    }
+
+    .cases .cases_block_2 {
+        width: 66.66%;
+    }
+
+    .cases .cases_block_1,.cases_block_3, .cases_block_4 {
+        box-sizing: border-box;
+        padding-right: 20px;
+    }
+
+    .cases .cases_block_1 img, .cases_block_5 img{
+        padding-bottom: 40px;
+    }
+
+    .cases .cases_title_2 {
+        top: 380px;
+        left: 10px;
+        width: 300px;
+    }
+
+    .cases .cases_title_3, .cases_title_4 {
+        top: 340px;
+        left: 10px;
+    }
+
+    .cases .date_3,.date_4 {
+        top: 435px;
+        left: 10px;
+    }
+
+    .cases .just_text {
+        padding-left: 30px;
+    } 
+    
+    .reviews .reviews_title {
+        font-weight: 700;
+        font-size: 42px;
+        line-height: 51px;
+        margin-top: 25px;
+    }
+
+    .partners .partners_title {
+        font-weight: 700;
+        font-size: 42px;
+        line-height: 51px;
+        margin-top: 25px;
+    }
+    .partners .partners_text {
+        font-size: 16px;
+        line-height: 20px;
+        opacity: 0.7;
+        margin-bottom: 30px;
+        font-weight: 600;
+        padding: 0 180px;
+        text-align: center;
+    }
+
+    
+
+    .FAQ .FAQ_title {
+        font-weight: 700;
+        font-size: 42px;
+        line-height: 51px;
+        margin-top: 25px;
+    }
+
+
+    /*.form .form_content{
+        flex-direction: row;
+        flex-wrap: wrap;
+
+    }
+
+    .form .form_block {
+        width: 50%;
+        box-sizing: border-box;
+        flex-wrap: wrap;
+    }
+    */
+
+
+}
+
+
+
+    
+
+
+
+
