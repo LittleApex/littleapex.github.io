@@ -1,10 +1,50 @@
 $(document).ready(() => {
+  // rate
+  $('.rate .rate_item').mouseover(function() {
+    $(this).toggleClass('rate_item_main');
+  });
 
-  // scroll
-  // $('.partners .partners_wrapper')[0].scrollRight(50);
-  // const p = document.querySelector('.partners_wrapper');
-  // p.scrollLeft = 100;
+  $('.rate .rate_item').mouseout(function() {
+    $(this).toggleClass('rate_item_main');
+  });
 
+
+  // reviews
+  const reviews = $('.review .review_content');
+  let currentReview = 0;
+  let reviewLength = reviews.length;
+  reviews.hide();
+  reviews.eq(currentReview).show();
+
+  $('.review_nav_all').html(digit(reviewLength));
+
+  $('.review_nav_prev_btn').click(function() {
+    reviews.eq(currentReview).fadeOut(200, function() {
+        currentReview--;
+        if (currentReview < 0) {
+          currentReview = reviewLength - 1;
+        }
+        $('.review_nav_current').html(digit(currentReview + 1));
+        reviews.eq(currentReview).fadeIn();
+    });
+  }); 
+
+  $('.review_nav_next_btn').click(function() {
+    reviews.eq(currentReview).fadeOut(200, function() {
+      currentReview++;
+      if (currentReview >= reviewLength) {
+        currentReview = 0;
+      }
+      $('.review_nav_current').html(digit(currentReview + 1));
+      reviews.eq(currentReview).fadeIn();
+    });
+  });
+
+  function digit(number) {
+    return (number < 10 ? '0' : '') + number;
+  }
+
+  // scroll position
   $('.partners .partners_wrapper')[0].scrollLeft = 100;
   $('.partners .partners_wrapper')[1].scrollLeft = 200;
 

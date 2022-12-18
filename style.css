@@ -901,6 +901,7 @@ header {
 .reviews .reviews_wrapper .review .review_nav .review_nav_next_btn {
     background-color: white; 
     border: none;
+    cursor: pointer;
 }
 
 .reviews .reviews_wrapper .review .review_nav .review_nav_current {
