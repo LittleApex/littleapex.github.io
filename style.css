@@ -828,6 +828,7 @@ header {
 
 .reviews .reviews_wrapper {
     margin: 0px auto;
+    height: 790px;
 }
 
 .reviews .reviews_wrapper .review .review_background {
