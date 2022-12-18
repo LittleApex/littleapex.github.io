@@ -647,7 +647,7 @@ header {
     text-align: center;
 }
 
-/*----team----*/
+/*---- team ----*/
 
 .team .team_title {
     text-align: center;
@@ -701,8 +701,6 @@ header {
     border: 1px solid #cccdd5;
     border-radius: 5px;
 }
-
-
 
 /*---cases----*/
 .cases .cases_title {
@@ -900,8 +898,6 @@ header {
     color: #e0e0e0;
 }
 
-
-
 /*---partners----*/
 .partners .partners_title {
     text-align: center;
@@ -968,7 +964,6 @@ header {
     .container {
         max-width:1180px;
     }
-
 
     header {
         padding: 0;
@@ -1504,9 +1499,6 @@ header {
 }
 
 @media screen and (min-width: 768px) { 
-    .container {
-        width: 1180px;
-    }
 
     /*---- competency ----*/
 
@@ -1532,7 +1524,7 @@ header {
         text-align: left;
     }
 
-    /*----team----*/
+    /*---- team ----*/
 
     .team {
         padding-top: 170px;
@@ -1702,15 +1694,11 @@ header {
         text-align: center;
     }
 
-    
-
     .FAQ .FAQ_title {
         font-weight: 700;
         font-size: 42px;
         line-height: 51px;
         margin-top: 25px;
     }
-
-
 }
 
