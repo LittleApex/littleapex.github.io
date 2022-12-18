@@ -929,41 +929,54 @@ header {
 }
 
 /*----FAQ----*/
+
 .FAQ .FAQ_title {
     text-align: center;
     font-weight: 700;
     font-size: 20px;
     line-height: 25px;
+    margin-bottom: 76px;
 }
 
-.FAQ li {
-    color: gray;
-    font-weight: 600;
-    font-size: 13px;
-    line-height: 13px;
+.FAQ .FAQ_wrapper .FAQ_item {
+    padding: 10px 16px;
 }
 
-.FAQ .FAQ_content {
+.FAQ .FAQ_wrapper .FAQ_item .question {
     display: flex;
-    flex-direction: column;
-}
-
-.FAQ li {
-    padding: 10px;
-}
-.FAQ .question {
+    flex-flow: row nowrap;
+    align-items: flex-start;
     color: #050C33;
     font-weight: 700;
     font-size: 18px;
     line-height: 18px;
+    margin-bottom: 8px;
 }
 
-.FAQ .answer {
-    padding-top: 10px;
+.FAQ .FAQ_wrapper .FAQ_item .question .question_num { 
+    color: gray;
+    font-weight: 600;
+    font-size: 13px;
+    line-height: 13px;
+    margin-top: 3px;
+    margin-right: 3px;
+}
+
+.FAQ .FAQ_wrapper .FAQ_item .answer {
+    margin-left: 14px;
     color: #050C33;
     font-size: 16px;
     line-height: 23px;
     opacity: 0.7;
+}
+
+.FAQ .FAQ_wrapper .active {
+    box-sizing: border-box;
+    border: 3px solid #ef4c39;
+}
+
+.FAQ .FAQ_wrapper .active .question{
+    color: #ef4c39;
 }
 
 
