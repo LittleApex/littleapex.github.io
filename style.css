@@ -930,6 +930,10 @@ header {
 
 /*----FAQ----*/
 
+.FAQ {
+    padding: 15px;
+}
+
 .FAQ .FAQ_title {
     text-align: center;
     font-weight: 700;
