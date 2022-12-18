@@ -11,6 +11,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&amp;family=Poppins:wght@400;500;600&amp;display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="style.css">
+
+    <script
+        src="https://code.jquery.com/jquery-3.6.2.js"
+        integrity="sha256-pkn2CUZmheSeyssYw3vMp1+xyub4m+e+QK4sQskvuo4="
+        crossorigin="anonymous"></script>
+    <script defer src="scripts/script.js"></script>
 </head>
 <body>
     <header>
@@ -754,130 +760,178 @@
 
     <!--FAQ --> 
     <section class="FAQ">
-        <div class = "container">
+        <div class="container">
             <div class="FAQ_title">
                 FAQ
             </div>
-            <ol>
-                <div class="FAQ_content">
-                    <li>
-                        <div class="question">
-                            Кто непосредственно занимается поддержкой?
-                        </div>
-                        <div class="answer">
-                            Сайты поддерживают штатные
-                            сотрудники ООО «Инитлаб», г. Краснодар,
-                            прошедшие специальное обучение и
-                            имеющие опыт работы с Друпал от 4 до
-                            5 лет: 8 web-разработчиков, 2
-                            специалиста по SЕО, 4 системных
-                            администратора.
-                        </div>
-                    </li>
-                    <li>
-                        <div class="question">
-                            Как организована работа поддержки?
-                        </div>
-                        <div class="answer">
-                            блаблаблаблаблабла
-                        </div>
-                    </li>
-                    <li>
-                        <div class="question">
-                            Что происходит, когда отработаны 
-                            все предоплаченные часы за месяц?
-                        </div>
-                        <div class="answer">
-                            блаблаблаблаблабла
-                        </div>
-                    </li>
-                    <li>
-                        <div class="question">
-                            Что происходит, когда 
-                            не отработаны все предоплаченные 
-                            часы за месяц?
-                        </div>
-                        <div class="answer">
-                            блаблаблаблаблабла
-                        </div>
-                    </li>
-                    <li>
-                        <div class="question">
-                            Как происходит оценка и
-                            согласование планируемого
-                            времени на выполнение заявок?
-                        </div>
-                        <div class="answer">
-                            блаблаблаблаблабла
-                        </div>
-                    </li>
-                    <li>
-                        <div class="question">
-                            Сколько программистов
-                            выделяется на проект?
-                        </div>
-                        <div class="answer">
-                            блаблаблаблаблабла
-                        </div>
-                    </li>
-                    <li>
-                        <div class="question">     
-                            Как подать заявку на внесение
-                            изменений на сайте?
-                        </div>
-                        <div class="answer">
-                            блаблаблаблаблабла
-                        </div>
-                    </li>
-                    <li>
-                        <div class="question">
+
+            <div class="FAQ_wrapper">
+
+                <div class="FAQ_item">
+                    <div class="question">
+                        <span class="question_num">1.</span>
+                        Кто непосредственно занимается поддержкой?
+                    </div>
+                    <div class="answer">
+                        Сайты поддерживают штатные
+                        сотрудники ООО «Инитлаб», г. Краснодар,
+                        прошедшие специальное обучение и
+                        имеющие опыт работы с Друпал от 4 до
+                        5 лет: 8 web-разработчиков, 2
+                        специалиста по SЕО, 4 системных
+                        администратора.
+                    </div>
+                </div>
+
+                <div class="FAQ_item">
+                    <div class="question">
+                        <span class="question_num">2.</span>
+                        Как организована работа поддержки?
+                    </div>
+                    <div class="answer">
+                        Lorem ipsum dolor sit amet, consectetuer adipiscing elit. 
+                        Aenean commodo ligula eget dolor. Aenean massa. Cum sociis 
+                        natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+                    </div>
+                </div>
+
+                <div class="FAQ_item">
+                    <div class="question">
+                        <span class="question_num">3.</span>
+                        Что происходит, когда отработаны 
+                        все предоплаченные часы за месяц?
+                    </div>
+                    <div class="answer">
+                        Lorem ipsum dolor sit amet, consectetuer adipiscing elit. 
+                        Aenean commodo ligula eget dolor. Aenean massa. Cum sociis 
+                        natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+                    </div>
+                </div>
+
+                <div class="FAQ_item">
+                    <div class="question">
+                        <span class="question_num">4.</span>
+                        Что происходит, когда не отработаны 
+                        все предоплаченные часы за месяц?
+                    </div>
+                    <div class="answer">
+                        Lorem ipsum dolor sit amet, consectetuer adipiscing elit. 
+                        Aenean commodo ligula eget dolor. Aenean massa. Cum sociis 
+                        natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+                    </div>
+                </div>
+
+                <div class="FAQ_item">
+                    <div class="question">
+                        <span class="question_num">5.</span>
+                        Как происходит оценка и
+                        согласование планируемого
+                        времени на выполнение заявок?
+                    </div>
+                    <div class="answer">
+                        Lorem ipsum dolor sit amet, consectetuer adipiscing elit. 
+                        Aenean commodo ligula eget dolor. Aenean massa. Cum sociis 
+                        natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+                    </div>
+                </div>
+
+                <div class="FAQ_item">
+                    <div class="question">
+                        <span class="question_num">6.</span>
+                        Сколько программистов
+                        выделяется на проект?
+                    </div>
+                    <div class="answer">
+                        Lorem ipsum dolor sit amet, consectetuer adipiscing elit. 
+                        Aenean commodo ligula eget dolor. Aenean massa. Cum sociis 
+                        natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+                    </div>
+                    
+                </div>
+
+                <div class="FAQ_item">
+                    <div class="question">
+                        <span class="question_num">7.</span>
+                        Как подать заявку на внесение
+                        изменений на сайте?
+                    </div>
+                    <div class="answer">
+                        Lorem ipsum dolor sit amet, consectetuer adipiscing elit. 
+                        Aenean commodo ligula eget dolor. Aenean massa. Cum sociis 
+                        natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+                    </div>
+                </div>
+
+                <div class="FAQ_item">
+                    <div class="question">
+                        <div class="question_num">8.</div>
+                        <div>
                             Как подать заявку на добавление пользователя,
                             изменение настроек веб-сервера
                             и других задач по администрированию?
                         </div>
-                        <div class="answer">
-                            блаблаблаблаблабла
-                        </div>
-                    </li>
-                    <li>
-                        <div class="question">
-                            В течение какого времени начинается
-                            работа по заявке?
-                        </div>
-                        <div class="answer">
-                            блаблаблаблаблабла
-                        </div>
-                    </li>
-                    <li>
-                        <div class="question">
-                            В какое время работает поддержка?
-                        </div>
-                        <div class="answer">
-                            блаблаблаблаблабла
-                        </div>
-                    </li>
-                    <li>
-                        <div class="question">
-                            Подходят ли услуги поддержки,
-                            если необходимо произвести одновление ядра
-                            Drupal или модулей?
-                        </div>
-                        <div class="answer">
-                            блаблаблаблаблабла
-                        </div>
-                    </li>
-                    <li>
-                        <div class="question">
-                            Можно ли пообщаться со
-                            специалистом голосом 
-                            или в мессенджере?
-                        </div>
-                        <div class="answer">
-                            блаблаблаблаблабла
-                        </div>
-                    </li>
+                    </div>
+                    <div class="answer">
+                        Lorem ipsum dolor sit amet, consectetuer adipiscing elit. 
+                        Aenean commodo ligula eget dolor. Aenean massa. Cum sociis 
+                        natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+                    </div>
                 </div>
-            </ol>
+
+                <div class="FAQ_item">
+                    <div class="question">
+                        <span class="question_num">9.</span>
+                        В течение какого времени начинается
+                        работа по заявке?
+                    </div>
+                    <div class="answer">
+                        Lorem ipsum dolor sit amet, consectetuer adipiscing elit. 
+                        Aenean commodo ligula eget dolor. Aenean massa. Cum sociis 
+                        natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+                    </div>
+                </div>
+
+                <div class="FAQ_item">
+                    <div class="question">
+                        <span class="question_num">10.</span>
+                        В какое время работает поддержка?
+                    </div>
+                    <div class="answer">
+                        Lorem ipsum dolor sit amet, consectetuer adipiscing elit. 
+                        Aenean commodo ligula eget dolor. Aenean massa. Cum sociis 
+                        natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+                    </div>
+                </div>
+
+                <div class="FAQ_item">
+                    <div class="question">
+                        <span class="question_num">11.</span>
+                        Подходят ли услуги поддержки,
+                        если необходимо произвести одновление ядра
+                        Drupal или модулей?
+                    </div>
+                    <div class="answer">
+                        Lorem ipsum dolor sit amet, consectetuer adipiscing elit. 
+                        Aenean commodo ligula eget dolor. Aenean massa. Cum sociis 
+                        natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+                    </div>
+                </div>
+
+                <div class="FAQ_item">
+                    <div class="question">
+                        <span class="question_num">12.</span>
+                        Можно ли пообщаться со
+                        специалистом голосом 
+                        или в мессенджере?
+                    </div>
+                    <div class="answer">
+                        Lorem ipsum dolor sit amet, consectetuer adipiscing elit. 
+                        Aenean commodo ligula eget dolor. Aenean massa. Cum sociis 
+                        natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+                    </div>
+                </div>
+                
+            </div>
         </div>
     </section>
 
