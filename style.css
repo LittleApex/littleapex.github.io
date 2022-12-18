@@ -957,6 +957,10 @@ header {
     margin-bottom: 8px;
 }
 
+.FAQ .FAQ_wrapper .question:hover{
+    cursor: pointer;
+}
+
 .FAQ .FAQ_wrapper .FAQ_item .question .question_num { 
     color: gray;
     font-weight: 600;
