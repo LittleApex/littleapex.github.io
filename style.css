@@ -928,6 +928,32 @@ header {
     padding-right: 30px;
 }
 
+.partners .partners_wrapper {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    display: flex;
+    flex-flow: row nowrap;
+    overflow: scroll;
+    overflow-y: hidden;
+    overflow-x: auto;
+}
+
+.partners .partners_wrapper::-webkit-scrollbar {
+    display: none;
+}
+
+.partners .partners_wrapper .logo_item {
+    width: 291px;
+    height: 155px;
+    border: 1px solid #E5E5E5;
+    border-radius: 5px;
+    margin: 10px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 /*----FAQ----*/
 
 .FAQ {
