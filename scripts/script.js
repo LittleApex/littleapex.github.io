@@ -17,7 +17,7 @@ $(document).ready(() => {
     if (!$('.request_form form .check').is(':checked')) {
       return;
     } 
-    const formData = new FormData($(".request_form form")[0]);
+    const formData = new FormData($('.request_form form')[0]);
     const data = {
         name: formData.get('name'),
         phone: formData.get('phone'),
@@ -29,8 +29,9 @@ $(document).ready(() => {
         method: 'post',
         dataType: 'json',
         data: JSON.stringify(data),
-        sucess: function(data) {
+        success: function(data) {
             console.log(data);
+            $('.request_form form')[0].reset();
         }
     });    
   });
