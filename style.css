@@ -707,6 +707,12 @@ header {
 }
 
 /*---cases----*/
+
+.cases {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
 .cases .cases_title {
     text-align: center;
     margin-bottom: 5px;
@@ -802,7 +808,7 @@ header {
 
 .reviews {
     position: relative;
-    margin-top: 80px;
+    padding-top: 60px;
     margin: 15px;
 }
 
@@ -911,21 +917,23 @@ header {
 
 /*---partners----*/
 
+.partners {
+    padding-top: 100px;
+}
+
 .partners .partners_title {
     text-align: center;
     margin-bottom: 15px;
     font-weight: 700;
     font-size: 20px;
-    line-height: 25px;
-    margin-top: 80px;
 }
 .partners .partners_text {
     font-size: 16px;
     line-height: 23px;
-    opacity: 0.7;
-    margin-bottom: 30px;
     font-weight: 600;
-    padding-right: 30px;
+    opacity: 0.7;
+    margin-bottom: 10px;
+    padding: 14px;
 }
 
 .partners .partners_wrapper {
@@ -936,6 +944,8 @@ header {
     overflow: scroll;
     overflow-y: hidden;
     overflow-x: auto;
+    cursor: grab;
+    white-space: nowrap;
 }
 
 .partners .partners_wrapper::-webkit-scrollbar {
@@ -943,8 +953,8 @@ header {
 }
 
 .partners .partners_wrapper .logo_item {
-    width: 291px;
-    height: 155px;
+    width: 162px;
+    height: 87px;
     border: 1px solid #E5E5E5;
     border-radius: 5px;
     margin: 10px;
@@ -954,10 +964,17 @@ header {
     justify-content: center;
 }
 
+.partners .partners_wrapper .logo_item img{
+    width: 40%;
+}
+
 /*----FAQ----*/
 
 .FAQ {
     padding: 15px;
+    padding-top: 74px;
+    /* padding-top: 130px; */
+    padding-bottom: 78px;
 }
 
 .FAQ .FAQ_title {
@@ -965,7 +982,8 @@ header {
     font-weight: 700;
     font-size: 20px;
     line-height: 25px;
-    margin-bottom: 76px;
+    /* margin-bottom: 76px; */
+    margin-bottom: 20px;
 }
 
 .FAQ .FAQ_wrapper .FAQ_item {
@@ -1740,6 +1758,10 @@ header {
         margin-top: 45px;
     }
 
+    .partners {
+        padding-top: 110px;
+    } 
+
     .partners .partners_title {
         font-weight: 700;
         font-size: 42px;
@@ -1755,12 +1777,28 @@ header {
         padding: 0 180px;
         text-align: center;
     }
+    .partners .partners_wrapper .logo_item {
+        width: 291px;
+        height: 155px;
+    }
+    .partners .partners_wrapper .logo_item img{
+        width: auto;
+        height: auto;
+    }
 
     .FAQ .FAQ_title {
         font-weight: 700;
         font-size: 42px;
         line-height: 51px;
         margin-top: 25px;
+    }
+
+    .FAQ {
+        padding-top: 130px;
+    }
+    
+    .FAQ .FAQ_title {
+        margin-bottom: 76px;
     }
 }
 

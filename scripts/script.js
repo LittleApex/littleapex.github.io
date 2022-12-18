@@ -1,5 +1,14 @@
 $(document).ready(() => {
 
+  // scroll
+  // $('.partners .partners_wrapper')[0].scrollRight(50);
+  // const p = document.querySelector('.partners_wrapper');
+  // p.scrollLeft = 100;
+
+  $('.partners .partners_wrapper')[0].scrollLeft = 100;
+  $('.partners .partners_wrapper')[1].scrollLeft = 200;
+
+
   // accordion
   $('.FAQ_wrapper .FAQ_item:first').addClass('active');
   $('.FAQ_wrapper .answer:not(:first)').hide();
