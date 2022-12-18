@@ -6,48 +6,53 @@ body {
     box-sizing: border-box;
 }
 
+/* .active {
+    background-color: red;
+} */
+
 .container {
     margin: 0 10px 0 10px;
 }
 
-/*----time----*/
+/*----competency----*/
 
-.time .time_title {
+.competency .competency_title {
     font-weight: 700;
-    font-size: 21px;
-    line-height: 20px;
-
+    font-size: 23px;
+    line-height: 25px;
     margin-top: 50px;
     padding-bottom: 50px;
 }
 
-.time .time_content {
+.competency .competency_wrapper {
     display: flex;
     flex-direction: column;
 }
 
-.time .time_block {
+.competency .competency_item {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-bottom: 60px;
+    margin-bottom: 30px;
 }
 
-.time .time_block_title {
+.competency img {
+    margin-left: -56px;
+}
+
+.competency .competency_item_title {
     font-weight: 700;
     font-size: 30px; 
-    line-height: 51px;
-
-    margin-bottom: 10px;
+    margin-bottom: 4px;
 }
 
-.time .time_text {
+.competency .competency_item_text {
     font-weight: 500;
     font-size: 14px;
     line-height: 18px;
+    width: 50%;
     opacity: 0.7;
 }
-
 
 /*----team----*/
 
@@ -59,14 +64,13 @@ body {
     line-height: 25px;
 }
 
-.team .team_content {
+.team .team_wrapper {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
 }
 
-
-.team .team_block {
+.team .team_item {
     display: flex;
     flex-direction: column;
     box-sizing: border-box;
@@ -74,12 +78,11 @@ body {
     padding: 10px;
 }
 
-.team .team_block_title {
+.team .team_item_title {
 
     font-weight: 700;
     font-size: 15px;
     line-height: 18px;
-
     margin-bottom: 7px;
 }
 
@@ -88,7 +91,7 @@ body {
     margin-bottom: 7px;
 }
 
-.team .team_text {
+.team .team_item_text {
     font-weight: 500;
     font-size: 12px;
     line-height: 14px;
@@ -100,13 +103,10 @@ body {
     display: flex;
     justify-content: center;
     padding: 7px 30px;
-
     font-weight: 500;
     font-size: 12px;
     line-height: 12px;
-
-
-    border: 1px solid #050C33; /*прозрачность*/
+    border: 1px solid #cccdd5; /*прозрачность*/
     border-radius: 5px;
 }
 
@@ -203,14 +203,115 @@ body {
     text-decoration: none;
 }
 
+
 /*---reviews----*/
+
+.reviews {
+    position: relative;
+    margin-top: 80px;
+    margin: 15px;
+}
+
+.reviews .reviews_quote {
+    position: absolute;
+    top: -100px;
+    left: -95px;
+}
+
 .reviews .reviews_title {
     text-align: center;
-    margin-bottom: 5px;
+    margin-bottom: 125px;
     font-weight: 700;
     font-size: 20px;
     line-height: 25px;
 }
+
+.reviews .reviews_wrapper {
+    margin: 0px auto;
+}
+
+.reviews .reviews_wrapper .review .review_background {
+    position: absolute;
+    top: -125px;
+    left: 0px;
+    z-index: -1;
+}
+.reviews .reviews_wrapper .review .review_background img {
+    width: 717px;
+}
+
+.reviews .reviews_wrapper .review {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-flow: column nowrap;
+    padding: 15px;
+    box-sizing: border-box;
+    background: #FFFFFF;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 4px 60px rgba(162, 162, 162, 0.25);
+    border-radius: 5px;
+}
+
+.reviews .reviews_wrapper .review .review_content {
+    padding: 15px;
+    margin-top: 5px;
+}
+
+.reviews .reviews_wrapper .review .review_content .review_logo {
+    margin-bottom: 32px;
+}
+
+
+.reviews .reviews_wrapper .review .review_content .review_text {
+    font-weight: 1000;
+    margin-bottom: 24px;
+}
+
+.reviews .reviews_wrapper .review .review_content .review_author {
+    font-weight: 500;
+    opacity: 0.7;
+}
+
+.reviews .reviews_wrapper .review .review_content a:visited {
+    color: inherit;
+}
+
+.reviews .reviews_wrapper .review .review_line {
+    width: 100%;
+    border-left: none;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.reviews .reviews_wrapper .review .review_nav {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    margin: 25px 0;
+    font-size: 25px;
+}
+
+.reviews .reviews_wrapper .review .review_nav .review_nav_prev_btn, 
+.reviews .reviews_wrapper .review .review_nav .review_nav_next_btn {
+    background-color: white; 
+    border: none;
+}
+
+.reviews .reviews_wrapper .review .review_nav .review_nav_current {
+    margin-right: 8px;
+    margin-left: 46px;
+    color: #050C33;
+}
+
+.reviews .reviews_wrapper .review .review_nav .review_nav_all {
+    margin-left: 8px;
+    margin-right: 46px;
+    color: #e0e0e0;
+}
+
+
 
 /*---partners----*/
 .partners .partners_title {
@@ -386,45 +487,53 @@ footer {
         width: 1080px;
         margin: 0 auto;
     }
-
-    .time .time_content {
-        display: flex;
-        flex-direction: row;
-    }
-
-    .time .time_block {
-        width: 27%;
-        align-items: flex-start;
-        margin-right: 100px;
-    }
-
-    .time .time_title {
+    
+    .competency .competency_title {
         font-weight: 700;
         font-size: 42px;
         line-height: 51px;
         margin-top: 160px;
     }
     
-    .time .time_text {
+    .competency .competency_wrapper {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .competency .competency_item {
+        width: 27%;
+        align-items: flex-start;
+        margin-right: 100px;
+    }
+    
+    .competency .competency_item_title {
+        margin: 0 8px;
+    }
+
+    .competency .competency_item_text {
         font-weight: 500;
         font-size: 16px;
         line-height: 22px;
+        width: 80%;
+    }
+
+    .team {
+        margin-top: 170px;
     }
 
     .team .team_title {
-        margin-top: 160px;
         margin-bottom: 40px;
         font-weight: 700;
         font-size: 42px;
         line-height: 51px;
     }
 
-    .team .team_block {
+    .team .team_item {
         width: 33.33%;
         padding: 40px;
     }
 
-    .team .team_block_title {
+    .team .team_item_title {
         margin-top: 25px;
         font-weight: 700;
         font-size: 16px;
@@ -436,7 +545,7 @@ footer {
         max-height: 280px;
     }
     
-    .team .team_text {
+    .team .team_item_text {
         font-weight: 500;
         font-size: 16px;
         line-height: 22px;
@@ -446,6 +555,7 @@ footer {
         width: 260px;
         height: 60px;
         padding-top: 25px;
+        margin-top: 45px;
     }
 
     
@@ -539,12 +649,41 @@ footer {
         padding-left: 30px;
     } 
     
+
+    .reviews {
+        margin: 0;
+        margin-top: 80px;
+    }
+
     .reviews .reviews_title {
         font-weight: 700;
         font-size: 42px;
         line-height: 51px;
-        margin-top: 25px;
     }
+    
+    .reviews .reviews_wrapper .review {
+        max-width: 980px;
+        flex-direction: row;
+        padding: 56px;
+        margin: 0px auto;
+    }
+
+    .reviews .reviews_wrapper .review .review_content {
+        padding: 19px 66px;
+        margin: 0;
+    }
+    
+    .reviews .reviews_wrapper .review .review_line {
+        width: 100%;
+        border-top: none;
+        border-left: 1px solid rgba(0, 0, 0, 0.1);
+    }
+
+    .reviews .reviews_wrapper .review .review_background img {
+        width: 972px; 
+        height: 613px;
+    }
+    
 
     .partners .partners_title {
         font-weight: 700;
