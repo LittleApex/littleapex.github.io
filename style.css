@@ -860,6 +860,12 @@ span {
 }
 
 /*---cases----*/
+
+.cases {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
 .cases .cases_title {
     text-align: center;
     margin-bottom: 5px;
@@ -955,7 +961,7 @@ span {
 
 .reviews {
     position: relative;
-    margin-top: 80px;
+    padding-top: 60px;
     margin: 15px;
 }
 
@@ -1051,6 +1057,7 @@ span {
 .reviews .reviews_wrapper .review .review_nav .review_nav_next_btn {
     background-color: white; 
     border: none;
+    cursor: pointer;
 }
 
 .reviews .reviews_wrapper .review .review_nav .review_nav_current {
@@ -1067,59 +1074,118 @@ span {
 
 /*---partners----*/
 
+.partners {
+    padding-top: 100px;
+}
+
 .partners .partners_title {
     text-align: center;
     margin-bottom: 15px;
     font-weight: 700;
     font-size: 20px;
-    line-height: 25px;
-    margin-top: 80px;
 }
 .partners .partners_text {
     font-size: 16px;
     line-height: 23px;
-    opacity: 0.7;
-    margin-bottom: 30px;
     font-weight: 600;
-    padding-right: 30px;
+    opacity: 0.7;
+    margin-bottom: 10px;
+    padding: 14px;
+}
+
+.partners .partners_wrapper {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    display: flex;
+    flex-flow: row nowrap;
+    overflow: scroll;
+    overflow-y: hidden;
+    overflow-x: auto;
+    cursor: grab;
+    white-space: nowrap;
+}
+
+.partners .partners_wrapper::-webkit-scrollbar {
+    display: none;
+}
+
+.partners .partners_wrapper .logo_item {
+    width: 162px;
+    height: 87px;
+    border: 1px solid #E5E5E5;
+    border-radius: 5px;
+    margin: 10px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.partners .partners_wrapper .logo_item img{
+    width: 40%;
 }
 
 /*----FAQ----*/
+
+.FAQ {
+    padding: 15px;
+    padding-top: 74px;
+    /* padding-top: 130px; */
+    padding-bottom: 78px;
+}
+
 .FAQ .FAQ_title {
     text-align: center;
     font-weight: 700;
     font-size: 20px;
     line-height: 25px;
+    /* margin-bottom: 76px; */
+    margin-bottom: 20px;
 }
 
-.FAQ li {
-    color: gray;
-    font-weight: 600;
-    font-size: 13px;
-    line-height: 13px;
+.FAQ .FAQ_wrapper .FAQ_item {
+    padding: 10px 16px;
 }
 
-.FAQ .FAQ_content {
+.FAQ .FAQ_wrapper .FAQ_item .question {
     display: flex;
-    flex-direction: column;
-}
-
-.FAQ li {
-    padding: 10px;
-}
-.FAQ .question {
+    flex-flow: row nowrap;
+    align-items: flex-start;
     color: #050C33;
     font-weight: 700;
     font-size: 18px;
     line-height: 18px;
+    margin-bottom: 8px;
 }
 
-.FAQ .answer {
-    padding-top: 10px;
+.FAQ .FAQ_wrapper .question:hover{
+    cursor: pointer;
+}
+
+.FAQ .FAQ_wrapper .FAQ_item .question .question_num { 
+    color: gray;
+    font-weight: 600;
+    font-size: 13px;
+    line-height: 13px;
+    margin-top: 3px;
+    margin-right: 3px;
+}
+
+.FAQ .FAQ_wrapper .FAQ_item .answer {
+    margin-left: 14px;
     color: #050C33;
     font-size: 16px;
     line-height: 23px;
     opacity: 0.7;
+}
+
+.FAQ .FAQ_wrapper .active {
+    box-sizing: border-box;
+    border: 3px solid #ef4c39;
+}
+
+.FAQ .FAQ_wrapper .active .question{
+    color: #ef4c39;
 }
 
 
@@ -1776,6 +1842,10 @@ span {
         margin-top: 45px;
     }
 
+    .partners {
+        padding-top: 110px;
+    } 
+
     .partners .partners_title {
         font-weight: 700;
         font-size: 42px;
@@ -1791,12 +1861,28 @@ span {
         padding: 0 180px;
         text-align: center;
     }
+    .partners .partners_wrapper .logo_item {
+        width: 291px;
+        height: 155px;
+    }
+    .partners .partners_wrapper .logo_item img{
+        width: auto;
+        height: auto;
+    }
 
     .FAQ .FAQ_title {
         font-weight: 700;
         font-size: 42px;
         line-height: 51px;
         margin-top: 25px;
+    }
+
+    .FAQ {
+        padding-top: 130px;
+    }
+    
+    .FAQ .FAQ_title {
+        margin-bottom: 76px;
     }
 }
 
