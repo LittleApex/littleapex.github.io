@@ -701,6 +701,10 @@ header .header_content .header_adv .header_adv_item .big {
     line-height: 15px;
 }
 
+span {
+    color: #F14D34;
+}
+
 .request_btn {
     width: 100%;
     height: 60px;
