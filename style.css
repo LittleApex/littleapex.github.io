@@ -1,4 +1,6 @@
-
+html {
+    scroll-behavior: smooth;
+}
 body {
     margin: 0px;
     padding: 0 px;
@@ -85,12 +87,6 @@ header .header_above_mob .header_menu_sign img{
     padding: 0 10px;
 }
 
-#header_btn:hover{
-        
-    background-color: #F14D34;
-    transition: 0.3s;
-    cursor:pointer;
-}
 
 .header_content .header_desc .header_title {
     font-weight: 700;
@@ -102,20 +98,34 @@ header .header_above_mob .header_menu_sign img{
     margin-top: 20px;
     font-size: 11px;
     font-weight: 500;
+    opacity: 0.8;
 }
 
 .header_btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 170px;
     height: 45px;
-    background: rgba(114, 32, 32, 0);
+    background: rgba(234, 27, 27, 0);
     border: 2px solid #F14D34;
     border-radius:5px;
-    margin: 40px 0;
     color: white;
     font-weight: 500;
     font-size: 12px;
     transition:0.2s;
-    z-index:5;
+    z-index:100;
+    text-decoration: none;
+    margin: 55px auto 50px auto;
+       
+}
+
+.header_btn:hover {
+    background-color: #F14D34;
+}
+
+a {
+    cursor:pointer;
 }
 
 
@@ -220,6 +230,16 @@ header .header_content .header_adv .header_adv_item .big {
     border-bottom:2px solid #F14D34;
 }
 
+.team button {
+    transition:0.9s;
+}
+
+.team button:hover {
+    background-color: #F14D34;
+    cursor:pointer;
+    transition:0.9s;
+    color:white;
+}
 
 .header_add_mob_sub {
     padding-left: 40px;
@@ -445,13 +465,13 @@ header .header_content .header_adv .header_adv_item .big {
     padding: 30px 30px 30px 30px;
     border: 1px solid rgba(0, 0, 0, 0.1);
     border-radius: 5px;
-    transition: 0.5s;
+    transition: 0.9s;
 }
 
 .rate .rate_wrapper .rate_item_main {
     box-shadow: 0px 4px 60px rgba(162, 162, 162, 0.25);
     z-index: 100;
-    transition: 0.5s;
+    transition: 0.9s;
     cursor:pointer;
 }
 
@@ -495,6 +515,11 @@ header .header_content .header_adv .header_adv_item .big {
     text-align: left;
 }
 
+.rate .rate_item .rate_item_list .list_item .list_item_text:hover {
+    color:#000;
+    opacity:1;
+}
+
 .rate .rate_item .rate_item_btn {
     width: 270px;
     max-width:100%;
@@ -506,14 +531,19 @@ header .header_content .header_adv .header_adv_item .big {
     display: flex;
     justify-content: space-around;
     align-items: center;
+    cursor:pointer;
 
     text-align: center;
     color: #FFFFFF;
     font-weight: 500;
     font-size: 12px;
     line-height: 12px;
-    border: 1px solid #F14D34;
+    border: 1px solid #ea442b;
     color:#F14D34;
+}
+
+.rate .rate_item .rate_item_btn:hover {
+    background-color: #ea4930;
 }
 
 .rate .rate_item_main .rate_item_btn {
@@ -838,6 +868,7 @@ span {
     width: 100%;
     margin-bottom: 7px;
 }
+
 
 .team .team_item .team_item_text {
     font-weight: 500;
@@ -1221,7 +1252,7 @@ span {
         flex-wrap:wrap;
     }
 
-    .header_above_des a {
+    .link_menu {
         color:white;
         text-decoration: none;
         padding-bottom:5px;
@@ -1231,7 +1262,9 @@ span {
         border-bottom: 2px solid #F14D34;
     }
 
-    .header_above_des a:hover{
+    
+
+    .header_above_des .link_menu:hover {
         border-bottom: 2px solid #F14D34;
     }
 
@@ -1258,7 +1291,7 @@ span {
         background:#F14D34;
         position:absolute;
         right:-30px;
-        top:20px;
+        top:14px;
         margin-top: 5px;
         border-radius:1px;
         transition:0.4s;
@@ -1267,12 +1300,10 @@ span {
 
     .header_above_des .header_menu li .menu_add_open a {
         font-size: 11px;
+        transition: 0.9s;
+        text-decoration: none;
     }
 
-    .header_above_des .header_menu li .menu_add_open a:hover {
-        text-decoration: underline;
-        transition: 0.5s;
-    }
 
     .menu_add_btn {
         position:relative;
@@ -1294,15 +1325,30 @@ span {
         width: 15px;
     }
 
-    
-
-    .header_above_des .header_menu li .menu_add  li{
-        display: block;
-        width: 100%;
+    .header_above_des .header_menu li .menu_add  ul {
+        padding: 0;
+        margin: 0;
+        padding-bottom: 7px;
     }
 
-    .header_above_des .header_menu li .menu_add ul{
-        padding: 5px 15px;
+    .header_above_des .header_menu li .menu_add  li{
+        display: flex;
+        padding-left: 10px;
+        align-items: center;
+        width: 100%;
+        cursor:pointer;
+        margin-top: 0;
+    }
+
+    .header_above_des .header_menu li .menu_add  li a {
+        padding-top: 0;
+        color:white;
+        text-decoration: none;
+    }
+
+    .header_above_des .header_menu li .menu_add  li:hover {
+        background-color: #f56852;
+        transition:0.2s;
     }
 
     .header_above_des .header_menu ul {
@@ -1344,17 +1390,19 @@ span {
         margin-top: 15px;
     }
 
-    .header_content .header_desc .header_btn {
+    .header_btn {
         width: 220px;
         height: 60px;
         margin: 55px 0 0 0;
         cursor:pointer;
+        transition: 0.5s;
+        position:absolute;
     }
 
-    #header_btn:hover{
+    .header_btn:hover{
         
         background-color: #F14D34;
-        transition: 0.3s;
+        transition: 0.5s;
         cursor:pointer;
     }
 
