@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Drupal</title>
 
+    <link rel="icon" href="https://drupal-coder.ru/sites/default/files/android-chrome-256x256.png" type="image/png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&amp;family=Poppins:wght@400;500;600&amp;display=swap" rel="stylesheet">
@@ -27,7 +28,10 @@
             </video>
             <div class="header_above_des">
 
-                <img src="img/head/logo.png" alt="logo" class="header_logo">
+              
+                    <img src="img/head/logo.png" alt="logo" class="header_logo">
+
+                
                 <div class="header_menu">
                     <ul>
                         <li>
@@ -108,7 +112,7 @@
                         Сопровождение и поддержка сайтов
                         на CMS Drupal любых версий и запущенности
                     </div>
-                    <button class="header_btn">ТАРИФЫ</button>
+                    <button class="header_btn" onclick="window.location.href = '#rate'">ТАРИФЫ</button>
                 </div>
                 <div class="header_above_mob">
                     <img src="img/head/logo.png" alt="" class="header_mob_logo">
@@ -440,7 +444,7 @@
     <section class="rate">
         <img src="img/rate/D.png" alt="backgroung" class="rate_bg">
         <div class="container">
-            <div class="rate_title">
+            <div class="rate_title" id="rate">
                 Тарифы
             </div>
             <div class="rate_wrapper">

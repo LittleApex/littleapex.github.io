@@ -21,6 +21,7 @@ h1 {
     padding: 0;
 }
 
+
 header {
     background: url('img/head/video.mp4');
     background-color: #010102cc;
@@ -580,11 +581,12 @@ header .header_content .header_adv .header_adv_item .big {
 
 .rate .rate_get a {
     color:black;
-    text-decoration: none;
+    text-decoration: underline;
 }
 
 .rate .rate_get a:hover {
-    text-decoration: underline;
+    color: #F14D34;
+    transition:0.2s;
 }
 
 .request {
@@ -594,6 +596,7 @@ header .header_content .header_adv .header_adv_item .big {
     padding: 30px 20px 70px 20px;
     position:relative;
 }
+
 
 .request .request_content {
     max-width: 500px;
@@ -731,7 +734,11 @@ header .header_content .header_adv .header_adv_item .big {
     line-height: 15px;
 }
 
-span {
+.request span {
+    color: #F14D34;
+}
+
+.expert span {
     color: #F14D34;
 }
 
@@ -968,6 +975,13 @@ span {
     object-fit: cover;
     width: 100%;
     margin-bottom: 15px;
+    transition:0.3s;
+}
+
+.cases img:hover {
+    filter: brightness(70%);
+    cursor:pointer;
+    transition:0.3s;
 }
 
 .cases .img_one img {
@@ -977,6 +991,7 @@ span {
 .cases .img_two img, .img_three img {
     height: 200px;
 }
+
 
 .cases .just_text {
     font-size: 12px;
@@ -1210,6 +1225,8 @@ span {
     opacity: 0.7;
 }
 
+
+
 .FAQ .FAQ_wrapper .active {
     box-sizing: border-box;
     border: 3px solid #ef4c39;
@@ -1279,8 +1296,18 @@ span {
     }
 
     .header_above_des .header_menu li .menu_add {
-        display: none;
-        transition:0.4s;
+        display: flex;
+        padding-top: 10px;
+        width: 195px;
+        height: 140px;
+        background:#F14D34;
+        position:absolute;
+        right:-30px;
+        top:14px;
+        margin-top: 5px;
+        border-radius:1px;
+        transition:1s;
+        opacity: 0;
     }
 
     .header_above_des .header_menu li .menu_add_open {
@@ -1294,8 +1321,8 @@ span {
         top:14px;
         margin-top: 5px;
         border-radius:1px;
-        transition:0.4s;
-
+        transition:2s;
+        opacity:1;
     }
 
     .header_above_des .header_menu li .menu_add_open a {
@@ -1580,6 +1607,10 @@ span {
         width: 375px;
         min-height: 550px;
         padding: 75px 30px 62px 30px;
+    }
+    
+    .rate_wrapper {
+        height: 780px;
     }
     
     .rate .rate_wrapper .rate_item_main {
