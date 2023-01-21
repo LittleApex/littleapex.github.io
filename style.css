@@ -185,7 +185,7 @@ header .header_content .header_adv .header_adv_item .big {
 }
 
 .header_add_mob {
-    transition:0.4s;
+    /* transition:0.4s; */
     display: none;
 }
 
