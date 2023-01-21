@@ -17,7 +17,8 @@
         src="https://code.jquery.com/jquery-3.6.2.js"
         integrity="sha256-pkn2CUZmheSeyssYw3vMp1+xyub4m+e+QK4sQskvuo4="
         crossorigin="anonymous"></script>
-    <script defer src="scripts/script.js"></script>
+    <!-- <script defer src="scripts/script.js"></script>  -->
+    <script type="module" src="js/script.js"></script> 
 </head>
 <body>
     <header>
@@ -38,7 +39,7 @@
                             <a href="#" class="current link_menu">ПОДДЕРЖКА САЙТОВ</a>
                         </li>
                         <li>
-                            <a href="#" class="link_menu to_menu_1">АДМИНИСТРИРОВАНИЕ</a>
+                            <a id="dropdown" href="#" class="link_menu to_menu_1">АДМИНИСТРИРОВАНИЕ</a>
                             <button class="menu_add_btn">
                                 <img src="img/head/icons8-sort-down-24.png" alt="sign" class="menu_add_sign">
                             </button>
@@ -69,7 +70,7 @@
                             <a href="#" class="link_menu">РЕКЛАМА</a>
                         </li>
                         <li>
-                            <a href="#" class="link_menu">О НАС</a>
+                            <a  id="dropdown" href="#" class="link_menu">О НАС</a>
                             <button class="menu_add_btn">
                                 <img src="img/head/icons8-sort-down-24.png" alt="sign" class="menu_add_sign">
                             </button>
