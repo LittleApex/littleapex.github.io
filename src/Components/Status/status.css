@@ -1,0 +1,31 @@
+.succes {
+  background-color: rgb(121, 184, 141);
+  margin-top: 20px;
+  height: 70px;
+  border-radius: 10px;
+  color:#467046;
+  padding: 20px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+
+.succes img, .error img {
+  height: 100%;
+  margin-right: 20px;
+}
+
+.error {
+  background-color: rgb(214, 109, 105);
+  margin-top: 20px;
+  height: 70px;
+  border-radius: 10px;
+  color:#993224;
+  padding: 20px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+

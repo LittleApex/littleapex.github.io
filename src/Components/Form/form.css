@@ -1,0 +1,141 @@
+.modal {
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(0, 0, 0, 0.4);
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 3;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.active {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.form {
+  z-index: 4;
+  background: linear-gradient(261.2deg, rgba(255, 255, 255, 0.276) -114.85%, rgba(255, 255, 255, 0) 69.04%), #040613;
+  border: 2px solid #F14D34;
+  box-sizing: border-box;
+  padding: 35px;
+  width: 90vw;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  position: relative;
+}
+
+.form button#close {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  background-color: rgba(0, 0, 0, 0);
+  border: none;
+  width: 20px;
+  height: 20px;
+  padding: 0;
+  cursor: pointer;
+}
+
+.form button#close img {
+  width: 100%;
+  height: 100%;
+  opacity: 1;
+  transition-duration: 0.3s;
+}
+
+.form button#close img:hover {
+  transition-duration: 0.3s;
+  opacity: 0.7;
+}
+
+input {
+  display: block;
+  width: 100%;
+  height: 55px;
+  padding-left: 24px;
+  margin-bottom: 8px;
+  color:white;
+
+  border: 1px solid #ffffffb6;
+  border-radius: 5px;
+  background: none;
+  box-sizing: border-box;
+}
+
+.input_blocked {
+  background-color: rgb(43, 43, 59);
+  transition:0.3s;
+}
+
+
+input::placeholder{
+  font-weight: 480px;
+  font-size: 14px;
+  line-height: 16px;
+  color: #FFFFFF;
+  
+}
+
+textarea {
+  background: none;
+  color:white;
+  border-radius:5px;
+  width: 100%;
+  border: 1px solid #ffffffb6;
+  box-sizing: border-box;
+  padding-top: 26px;
+  padding-left: 16px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 16px;
+}
+
+.check_wrapper {
+  display: flex;
+  align-items: center;
+  column-gap:13px;
+  margin-top: 15px;
+}
+
+.check {
+  width: 25px;
+  height: 25px;
+  background: none;
+}
+
+.check_text {
+  font-weight: 400;
+  font-size: 11px;
+  line-height: 15px;
+}
+
+.form a {
+  color: #F14D34;
+  text-decoration: none;
+}
+
+.form a:hover {
+  text-decoration: underline;
+}
+
+
+@media (min-width: 1024px) {
+  .form {
+    width: 40vw;
+    padding: 50px;
+  }  
+
+  .form button#close {
+    width: 25px;
+    height: 25px;
+  }
+}
