@@ -1,19 +1,25 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { Route, Routes } from "react-router";
 import { Link } from "react-router-dom";
 import Form from "../Form/Form";
+import Popup from "../Popup/Popup";
 
 function App() {
 
-  const [modalActive, setModalActive] = useState(true);
+  const openButtonRef = useRef();  
   
   return (
     <div>
       <Link to="/form">
-        <button onClick={() => setModalActive(true)}>Связаться с нами</button>
+        <button  ref={openButtonRef}>Связь с нами</button>
       </Link>
+
       <Routes>
-        <Route path="/form" element={<Form active={modalActive} setActive={setModalActive}/>}/>
+        <Route path="/form" element={
+          <Popup spawnRef={openButtonRef}>
+            <Form/>
+          </Popup>
+        }/>
       </Routes>
     </div>
   );

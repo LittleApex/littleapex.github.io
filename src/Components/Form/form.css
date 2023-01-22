@@ -1,30 +1,9 @@
-.modal {
-  height: 100vh;
-  width: 100vw;
-  background-color: rgba(0, 0, 0, 0.4);
-  position: fixed;
-  top: 0;
-  left: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 3;
-  opacity: 0;
-  pointer-events: none;
-}
-
-.active {
-  opacity: 1;
-  pointer-events: all;
-}
-
 .form {
-  z-index: 4;
   background: linear-gradient(261.2deg, rgba(255, 255, 255, 0.276) -114.85%, rgba(255, 255, 255, 0) 69.04%), #040613;
   border: 2px solid #F14D34;
   box-sizing: border-box;
   padding: 35px;
-  width: 90vw;
+  width: 100%;
   display: flex;
   flex-flow: column nowrap;
   align-items: center;
@@ -33,7 +12,7 @@
   position: relative;
 }
 
-.form button#close {
+#close {
   position: absolute;
   right: 10px;
   top: 10px;
@@ -43,16 +22,17 @@
   height: 20px;
   padding: 0;
   cursor: pointer;
+  z-index: 4;
 }
 
-.form button#close img {
+#close img {
   width: 100%;
   height: 100%;
   opacity: 1;
   transition-duration: 0.3s;
 }
 
-.form button#close img:hover {
+#close img:hover {
   transition-duration: 0.3s;
   opacity: 0.7;
 }
@@ -104,12 +84,15 @@ textarea {
   align-items: center;
   column-gap:13px;
   margin-top: 15px;
+
+  
 }
 
 .check {
   width: 25px;
   height: 25px;
   background: none;
+  border: 13px solid #295286b6;
 }
 
 .check_text {
@@ -134,8 +117,10 @@ textarea {
     padding: 50px;
   }  
 
-  .form button#close {
+    #close {
     width: 25px;
     height: 25px;
+    right: 15px;
+    top: 15px;
   }
 }
