@@ -54,6 +54,15 @@ function menu() {
   $('.header_menu_sign').click(function() {
     $('.header_add_mob').slideToggle('slow');
   });
+
+  //menu links
+  $(document).ready(function () {
+    $('.header_menu a').click(function () {
+        $('.header_menu a').removeClass("current");
+        $(this).addClass('current');
+    });
+});
+
 }
 
 
