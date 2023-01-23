@@ -3,7 +3,7 @@ html {
 }
 body {
     margin: 0px;
-    padding: 0 px;
+    padding: 0px;
     box-sizing: border-box;
     font-family: 'Montserrat';
     font-style: normal;
@@ -397,6 +397,11 @@ header .header_content .header_adv .header_adv_item .big {
     background: linear-gradient(261.2deg, rgba(255, 255, 255, 0.276) -114.85%, rgba(255, 255, 255, 0) 69.04%), #040613;
 }
 
+.expert span a {
+    color: #F14D34;
+    cursor:pointer;
+    text-decoration: none;
+}
 .expert .expert_title {
     font-weight: 700;
     font-size: 20px;

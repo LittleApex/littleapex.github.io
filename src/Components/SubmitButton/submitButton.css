@@ -21,3 +21,8 @@
   border: 1px solid #F14D34;
   transition:0.5s;
 }
+
+.send_btn:disabled {
+  background-color: rgba(40, 39, 53, 0.425);
+  transition:0.2s;
+}

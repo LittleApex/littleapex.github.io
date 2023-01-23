@@ -18,7 +18,7 @@ function menu() {
 
     menus.eq(i).mouseleave(function(e) {
       if (!openedStatic) {
-        focusedMenu.toggleClass('menu_add_open');
+        focusedMenu?.toggleClass('menu_add_open');
         focusedMenu = null;
         menuBtns.attr('disabled', false);
         openedStatic = null;
