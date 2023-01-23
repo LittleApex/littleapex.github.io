@@ -4,11 +4,10 @@ import './popup.css';
 import Close from './close.png'
 import { useNavigate } from "react-router";
 
-const centerX = window.screen.availWidth / 2;
-const centerY = window.screen.availHeight / 2 - 150;
+const centerX = window.innerWidth / 2;
+const centerY = window.innerHeight / 2;
 
 const Popup = ({spawnRef, children}) => {
-  
   
   const [x, setX] = useState(spawnRef.current ? spawnRef.current.getBoundingClientRect().x : centerX);
   const [y, setY] = useState(spawnRef.current ? spawnRef.current.getBoundingClientRect().y > window.innerHeight 
