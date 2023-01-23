@@ -346,7 +346,7 @@ header .header_content .header_adv .header_adv_item .big {
     -moz-box-shadow: 7px 12px 11px -9px rgba(34, 60, 80, 0.2);
     border-radius:3px;
     position:relative;
-    z-index: 3;
+    z-index: 1;
     transition:0.9s;
     cursor:pointer;
 }
@@ -1456,6 +1456,7 @@ header .header_content .header_adv .header_adv_item .big {
         cursor:pointer;
         transition: 0.5s;
         position:absolute;
+        z-index: 1;
     }
 
     .header_btn:hover{
