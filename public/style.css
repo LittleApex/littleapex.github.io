@@ -1042,6 +1042,13 @@ header .header_content .header_adv .header_adv_item .big {
     text-decoration: none;
 }
 
+.cases .just_text:hover {
+    text-decoration: underline;
+}
+
+.cases a:hover {
+    text-decoration: underline;
+}
 
 /*---reviews----*/
 
