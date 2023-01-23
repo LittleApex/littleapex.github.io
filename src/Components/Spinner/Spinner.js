@@ -1,9 +1,9 @@
-import Icon from './icon.svg';
+import icon from './loading.gif';
 
 const Spinner = () => {
-  return(
+  return (
     <span className="spinner_wrapper">
-      <img className="spinner" src={Icon} alt="spinner.gif" style={{height: "70%"}}></img>
+      <img className="spinner" src={icon} alt="spinner.gif" style={{height: "70%"}}></img>
     </span>
   );
 }

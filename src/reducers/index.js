@@ -1,10 +1,20 @@
 const initialState = {
-  formStatus: 'idle',
+  formStatus: 'invalid',
   serverMessage: ''
 }
 
 const reducer = (state = initialState, action) => {
   switch(action.type) {
+    case 'FORM_IDLE':
+      return {
+        ...state,
+        formStatus: 'idle'
+      }
+      case 'FORM_INVALID':
+        return {
+          ...state,
+          formStatus: 'invalid'
+        }
     case 'FORM_FETCHING':
       return {
         ...state, 

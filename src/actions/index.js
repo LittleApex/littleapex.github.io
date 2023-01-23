@@ -1,3 +1,14 @@
+export const formIdle = () => {
+  return {
+    type: 'FORM_IDLE'
+  }
+}
+
+export const formInvalid = () => {
+  return {
+    type: 'FORM_INVALID'
+  }
+}
 
 
 export const formFetching = () => {

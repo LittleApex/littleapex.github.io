@@ -5,23 +5,16 @@ import './submitButton.css';
 const SubmitButton = ({onClick}) => {
 
   const {formStatus} = useSelector(state => state);
-  
-  if (formStatus === "loading") {
-    return <button 
-      disabled
+
+  return (
+    <button 
+      disabled={formStatus === "loading" || formStatus === "invalid"}
       type="submit" 
-      className="send_btn send_btn_pressed"
+      className="send_btn"
       onClick={(e) => onClick(e)}>
-        <Spinner/>
-    </button> 
-  } else {
-    return <button 
-      type="submit" 
-      className="send_btn" 
-      onClick={(e) => onClick(e)}>
-        Оставить заявку
+        {formStatus === "loading" ? <Spinner/> : "Оставить заявку"}
     </button>
-  }
+  );
 }
 
 export default SubmitButton;

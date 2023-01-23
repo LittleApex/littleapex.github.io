@@ -1,15 +1,18 @@
 import { useState } from "react";
 
-export const useInput = (initialValue) => {
+export const useInput = (key) => {
 
-  const [value, setValue] = useState(initialValue);
+  const [value, setValue] = useState(localStorage.getItem(key) ?? '');
 
   const onChange = event => {
     setValue(event.target.value);
+    const value = event.target.value;
+    localStorage.setItem(key, value);
   }
 
   const clear = () => {
-    setValue(initialValue);
+    setValue('');
+    localStorage.setItem(key, '');
   }
 
   return {value, onChange, clear};

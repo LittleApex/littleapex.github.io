@@ -1,8 +1,9 @@
-import { useState, useRef } from "react";
+import { useRef } from "react";
 import { Route, Routes } from "react-router";
 import { Link } from "react-router-dom";
 import Form from "../Form/Form";
 import Popup from "../Popup/Popup";
+import './app.css';
 
 function App() {
 
@@ -11,7 +12,7 @@ function App() {
   return (
     <div>
       <Link to="/form">
-        <button  ref={openButtonRef}>Связь с нами</button>
+        <button id="open_form_btn" ref={openButtonRef}>Связь с нами</button>
       </Link>
 
       <Routes>

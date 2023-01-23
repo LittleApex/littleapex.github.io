@@ -4,18 +4,17 @@ import './popup.css';
 import Close from './close.png'
 import { useNavigate } from "react-router";
 
-const centerX = window.innerWidth / 2;
-const centerY = window.innerHeight / 2;
-const speed = 3;
+const centerX = window.screen.availWidth / 2;
+const centerY = window.screen.availHeight / 2 - 150;
 
-const Popup = ({spawnRef, close, setClose, children}) => {
+const Popup = ({spawnRef, children}) => {
   
-  let offsetX, offsetY;
   
   const [x, setX] = useState(spawnRef.current ? spawnRef.current.getBoundingClientRect().x : centerX);
   const [y, setY] = useState(spawnRef.current ? spawnRef.current.getBoundingClientRect().y > window.innerHeight 
         ? window.innerHeight : spawnRef.current.getBoundingClientRect().y : centerY);
   const [scale, setScale] = useState(0);
+  const [opacity, setOpacity] = useState(0);
 
   const startRef = useRef(null);
   const requestRef = useRef(null);
@@ -31,19 +30,21 @@ const Popup = ({spawnRef, close, setClose, children}) => {
       window.history.scrollRestoration = "manual"
     }
 
-    window.addEventListener('popstate', () => {
-      // window.history.go(1);
-    });
-
-    offsetX = popupRef?.current.offsetWidth / 2;
-    offsetY = popupRef?.current.offsetHeight / 2;
+    const offsetX = popupRef?.current.offsetWidth / 2;
+    const offsetY = popupRef?.current.offsetHeight / 2;
     setX(x - offsetX);
     setY(y - offsetY);
 
     if (!(x === centerX && y === centerY)) {
-      requestRef.current = requestAnimationFrame(openAnimation);
+      let stepX = centerX - x;
+      let stepY = centerY - y;
+      const length = Math.sqrt(stepX * stepX + stepY * stepY);
+      stepX /= length;
+      stepY /= length;  
+      requestRef.current = requestAnimationFrame((time) => openAnimation(time, stepX, stepY, length, 3));
     } else {
       setScale(1);
+      setOpacity(1);
     }
     
     return () => {
@@ -51,16 +52,10 @@ const Popup = ({spawnRef, close, setClose, children}) => {
     }
   }, []);
 
-  const openAnimation = time => {
+  const openAnimation = (time, stepX, stepY, length, speed) => {
     if (!startRef.current) {
       startRef.current = time;
     }
-
-    let stepX = centerX - x;
-    let stepY = centerY - y;
-    const length = Math.sqrt(stepX * stepX + stepY * stepY);
-    stepX /= length;
-    stepY /= length;  
     const deltaTime = time - previousTimeRef.current;      
 
     if (time - startRef.current < length / speed) {
@@ -68,20 +63,22 @@ const Popup = ({spawnRef, close, setClose, children}) => {
         setX(prev => prev + stepX * deltaTime * speed);
         setY(prev => prev + stepY * deltaTime * speed);
         setScale(prev => prev + (1 / length) * deltaTime * speed);
+        setOpacity(prev => prev + (1 / length) * deltaTime * speed);
       }
       
       previousTimeRef.current = time;
     
-      requestRef.current = requestAnimationFrame(openAnimation);
+      requestRef.current = requestAnimationFrame((time) => openAnimation(time, stepX, stepY, length, speed));
     } else {
-      setX(centerX - offsetX);
-      setY(centerY - offsetY);
+      setX(centerX - popupRef?.current.offsetWidth / 2);
+      setY(centerY - popupRef?.current.offsetHeight / 2);
       setScale(1);
+      setOpacity(1);
       requestRef.current = previousTimeRef.current = startRef.current = null;
     }
   }
 
-  const closeAnimation = (stepX, stepY, length, time) => {
+  const closeAnimation = (time, stepX, stepY, length, speed) => {
     if (!startRef.current) {
       startRef.current = time;
     }
@@ -92,11 +89,12 @@ const Popup = ({spawnRef, close, setClose, children}) => {
       if (previousTimeRef.current !== null) {    
         setX(prev => prev + stepX * deltaTime * speed);
         setY(prev => prev + stepY * deltaTime * speed);
-        setScale(prev => prev - (1 / length) * deltaTime * speed);
+        // setScale(prev => prev - (1 / length) * deltaTime * speed);
+        setOpacity(prev => prev - (1 / length) * deltaTime * speed);
       }
       
       previousTimeRef.current = time;      
-      requestRef.current = requestAnimationFrame((time) => closeAnimation(stepX, stepY, length, time));
+      requestRef.current = requestAnimationFrame((time) => closeAnimation(time, stepX, stepY, length, speed));
     } else {
       setScale(0);
       goBack();
@@ -105,19 +103,17 @@ const Popup = ({spawnRef, close, setClose, children}) => {
   
   const closeRoutine = () =>
   {
-    let stepX = spawnRef.current.getBoundingClientRect().x - x;
-    let stepY =  spawnRef.current.getBoundingClientRect().y < window.innerHeight 
-      ? spawnRef.current.getBoundingClientRect().y : window.innerHeight;
-  
+    let stepX = 0;
+    let stepY =  y + 100;
+    
     const length = Math.sqrt(stepX * stepX + stepY * stepY);
     stepX /= length;
     stepY /= length;  
-    console.log(length);
-    requestRef.current = requestAnimationFrame((time) => closeAnimation(stepX, stepY, length, time));
+    requestRef.current = requestAnimationFrame((time) => closeAnimation(time, stepX, stepY, length, 1));
   }
 
-  return(
-    <div className="popup active">
+  return (
+    <div className="popup" style={{opacity: `${opacity}`}}> 
       <div ref={popupRef} className="popup_wrapper" style={{left: `${x}px`, top: `${y}px`, scale:`${scale}`}}>
         <button id="close">
           <img src={Close} alt="close" onClick={closeRoutine}></img>
