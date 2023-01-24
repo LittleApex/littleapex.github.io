@@ -1,126 +1,115 @@
-
 import { useState, useRef, useEffect } from "react";
-import './popup.css';
-import Close from './close.png'
+import { moveAnimation, scaleAnimation } from "./animation";
+
+import { useDispatch } from "react-redux";
+import { closeForm } from "../../actions";
+
 import { useNavigate } from "react-router";
 
-const centerX = window.innerWidth / 2;
-const centerY = window.innerHeight / 2;
+import "./popup.css";
+import Close from './close.png'
 
-const Popup = ({spawnRef, children}) => {
-  
-  const [x, setX] = useState(spawnRef.current ? spawnRef.current.getBoundingClientRect().x : centerX);
-  const [y, setY] = useState(spawnRef.current ? spawnRef.current.getBoundingClientRect().y > window.innerHeight 
-        ? window.innerHeight : spawnRef.current.getBoundingClientRect().y : centerY);
-  const [scale, setScale] = useState(0);
-  const [opacity, setOpacity] = useState(0);
-
-  const startRef = useRef(null);
-  const requestRef = useRef(null);
-  const previousTimeRef = useRef(null);
-  const popupRef = useRef(null);
+const Popup = ({ popupState,  popupBtnRef, children }) => {
 
   const navigate = useNavigate();
   const goBack = () => navigate(-1);
 
+  const dispatch = useDispatch();
 
-  useEffect(() => { 
-    if ("scrollRestoration" in window.history) {
-      window.history.scrollRestoration = "manual"
-    }
+  const [thisPopupState, setThisPopupState] = useState(popupState);
+  const popupContent = useRef();
 
-    const offsetX = popupRef?.current.offsetWidth / 2;
-    const offsetY = popupRef?.current.offsetHeight / 2;
-    setX(x - offsetX);
-    setY(y - offsetY);
+  const btnPoint = () => {
+    const pos = popupBtnRef.current?.getBoundingClientRect();
+    return {
+      x: pos ? pos.x : window.innerWidth / 2,
+      y: pos ? pos.y <  window.innerWidth ? pos.y : window.innerWidth : 0
+    }
+  }
 
-    if (!(x === centerX && y === centerY)) {
-      let stepX = centerX - x;
-      let stepY = centerY - y;
-      const length = Math.sqrt(stepX * stepX + stepY * stepY);
-      stepX /= length;
-      stepY /= length;  
-      requestRef.current = requestAnimationFrame((time) => openAnimation(time, stepX, stepY, length, 3));
-    } else {
-      setScale(1);
-      setOpacity(1);
-    }
-    
-    return () => {
-      cancelAnimationFrame(requestRef.current);
-    }
+  const [position, setPosition] = useState(btnPoint());
+  const [scale, setScale] = useState(thisPopupState === "opened" ? 1 : 0);
+  const [contentSize, setContentSize] = useState({width: 0, height: 0});
+  const [centerPoint, setCetnerPoint] = useState({x: window.innerWidth / 2, y: window.innerHeight / 2});
+
+  useEffect(() => {
+    window.addEventListener("popstate", () => {
+      dispatch(closeForm());
+    });
+
+    window.addEventListener("resize", () => {
+      setCetnerPoint({
+        x: window.innerWidth / 2, 
+        y: window.innerHeight / 2
+      });
+
+      if (popupContent.current) {
+        setContentSize({
+          width: popupContent.current.offsetWidth,
+          height: popupContent.current.offsetHeight
+        });
+      }
+    })
   }, []);
 
-  const openAnimation = (time, stepX, stepY, length, speed) => {
-    if (!startRef.current) {
-      startRef.current = time;
-    }
-    const deltaTime = time - previousTimeRef.current;      
 
-    if (time - startRef.current < length / speed) {
-      if (previousTimeRef.current !== null) {    
-        setX(prev => prev + stepX * deltaTime * speed);
-        setY(prev => prev + stepY * deltaTime * speed);
-        setScale(prev => prev + (1 / length) * deltaTime * speed);
-        setOpacity(prev => prev + (1 / length) * deltaTime * speed);
+  useEffect(() => {
+    if (thisPopupState !== popupState) {
+      if (popupContent.current) {
+        setContentSize({
+          width: popupContent.current.offsetWidth,
+          height: popupContent.current.offsetHeight
+        });
       }
-      
-      previousTimeRef.current = time;
-    
-      requestRef.current = requestAnimationFrame((time) => openAnimation(time, stepX, stepY, length, speed));
-    } else {
-      setX(centerX - popupRef?.current.offsetWidth / 2);
-      setY(centerY - popupRef?.current.offsetHeight / 2);
-      setScale(1);
-      setOpacity(1);
-      requestRef.current = previousTimeRef.current = startRef.current = null;
-    }
-  }
-
-  const closeAnimation = (time, stepX, stepY, length, speed) => {
-    if (!startRef.current) {
-      startRef.current = time;
-    }
-
-    const deltaTime = time - previousTimeRef.current;      
-    
-    if (time - startRef.current < length / speed) {
-      if (previousTimeRef.current !== null) {    
-        setX(prev => prev + stepX * deltaTime * speed);
-        setY(prev => prev + stepY * deltaTime * speed);
-        // setScale(prev => prev - (1 / length) * deltaTime * speed);
-        setOpacity(prev => prev - (1 / length) * deltaTime * speed);
-      }
-      
-      previousTimeRef.current = time;      
-      requestRef.current = requestAnimationFrame((time) => closeAnimation(time, stepX, stepY, length, speed));
-    } else {
-      setScale(0);
-      goBack();
-    }
-  }
   
-  const closeRoutine = () =>
-  {
-    let stepX = 0;
-    let stepY =  y + 100;
-    
-    const length = Math.sqrt(stepX * stepX + stepY * stepY);
-    stepX /= length;
-    stepY /= length;  
-    requestRef.current = requestAnimationFrame((time) => closeAnimation(time, stepX, stepY, length, 1));
+      if (thisPopupState === 'closed') {
+        console.log(contentSize);
+        const time = moveAnimation(
+          btnPoint(),
+          centerPoint,
+          setPosition,
+          2, 
+          () => {
+            setThisPopupState(popupState);
+          }
+        );
+        scaleAnimation(0, 1, setScale, time + 100);
+        
+      } else if (thisPopupState === 'opened') {
+        const time = moveAnimation(
+          centerPoint,
+          btnPoint(),
+          setPosition,
+          2,
+          () => {
+            setThisPopupState(popupState);
+          }
+          );
+        scaleAnimation(1, 0, setScale, time - 100);
+      }
+    }
+  }, [popupState]);
+
+
+  const wrapperStyle = {
+    left: (thisPopupState === "opened" && popupState !== "closed" ? centerPoint.x : position.x) - contentSize.width / 2,
+    top: (thisPopupState === "opened" && popupState !== "closed"? centerPoint.y : position.y) - contentSize.height / 2,
   }
 
-  return (
-    <div className="popup" style={{opacity: `${opacity}`}}> 
-      <div ref={popupRef} className="popup_wrapper" style={{left: `${x}px`, top: `${y}px`, scale:`${scale}`}}>
-        <button id="close">
-          <img src={Close} alt="close" onClick={closeRoutine}></img>
-        </button>
-        {children}
+  if (thisPopupState === "opened" || popupState === "opened") {
+    return (
+      <div className="popup">
+        <div ref={popupContent} className="popup_wrapper" style={{...wrapperStyle, scale:`${scale}`}}>
+          <button id="close">
+            <img src={Close} alt="close" onClick={goBack}></img>
+          </button>
+          {children}
+        </div>
       </div>
-  </div>
-  );
-}
+    );
+  }
+
+  return "";
+};
 
 export default Popup;

@@ -1,3 +1,15 @@
+export const openForm = () => {
+  return {
+    type: 'OPEN_FORM'
+  }
+}
+
+export const closeForm = () => {
+  return {
+    type: 'CLOSE_FORM'
+  }
+}
+
 export const formIdle = () => {
   return {
     type: 'FORM_IDLE'
@@ -9,7 +21,6 @@ export const formInvalid = () => {
     type: 'FORM_INVALID'
   }
 }
-
 
 export const formFetching = () => {
   return {

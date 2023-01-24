@@ -1,27 +1,30 @@
-import { useRef } from "react";
-import { Route, Routes } from "react-router";
-import { Link } from "react-router-dom";
 import Form from "../Form/Form";
 import Popup from "../Popup/Popup";
+
+import { useDispatch, useSelector } from "react-redux";
+import { openForm } from "../../actions";
+import { useRef } from "react";
+
+import { Link } from "react-router-dom";
+
 import './app.css';
 
 function App() {
 
-  const openButtonRef = useRef();  
+  const dispatch = useDispatch();
+  const {popupState} = useSelector(state => state);
+  const popupBtnRef = useRef(null);
   
   return (
     <div>
       <Link to="/form">
-        <button id="open_form_btn" ref={openButtonRef}>Связь с нами</button>
+        <button ref={popupBtnRef} id="open_form_btn" onClick={() => dispatch(openForm())}>Связь с нами</button>
       </Link>
 
-      <Routes>
-        <Route path="/form" element={
-          <Popup spawnRef={openButtonRef}>
-            <Form/>
-          </Popup>
-        }/>
-      </Routes>
+      <Popup popupState={popupState} popupBtnRef={popupBtnRef}>
+        <Form/>
+      </Popup>
+
     </div>
   );
 }
