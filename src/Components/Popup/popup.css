@@ -13,12 +13,6 @@
   /* background-color: aqua; */
   z-index: 10;
   box-sizing: border-box;
-  width: 90vw;
+  /* width: 90vw; */
   position: absolute;
-}
-
-@media (min-width: 1024px) {
-  .popup_wrapper {
-    width: 40vw;
-  }  
 }

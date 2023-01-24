@@ -2,16 +2,16 @@
   background: linear-gradient(261.2deg, rgba(255, 255, 255, 0.276) -114.85%, rgba(255, 255, 255, 0) 69.04%), #040613;
   border: 2px solid #F14D34;
   box-sizing: border-box;
-  width: 100%;
-  display: flex;
-  flex-flow: column nowrap;
-  align-items: center;
-  justify-content: center;
+  width: 90vw;
   border-radius: 10px;
   position: relative;
 }
 
 .form_wrapper form {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: center;
   width: 100%;
   box-sizing: border-box;
   padding: 35px;
@@ -114,14 +114,13 @@ textarea {
 }
 
 
-@media (min-width: 1024px) {
+ @media (min-width: 1024px) {
   .form_wrapper {
     width: 40vw;
   }  
 
   .form_wrapper form{
-    width: 40vw;
-    padding: 50px 100px;
+    padding: 50px;
   }  
 
   .popup button#close {
@@ -131,3 +130,9 @@ textarea {
     top: 15px;
   }
 }
+
+@media (min-width: 768px) and (max-width:1024px){
+  .form_wrapper {
+    width: 60vw;
+  }  
+} 

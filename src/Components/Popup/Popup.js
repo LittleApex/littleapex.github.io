@@ -27,6 +27,15 @@ const Popup = ({ popupState,  popupBtnRef, children }) => {
     }
   }
 
+  const updateContentSize = () => {
+    if (popupContent.current) {
+      setContentSize({
+        width: popupContent.current.offsetWidth,
+        height: popupContent.current.offsetHeight
+      });
+    }
+  }
+
   const [position, setPosition] = useState(btnPoint());
   const [scale, setScale] = useState(thisPopupState === "opened" ? 1 : 0);
   const [contentSize, setContentSize] = useState({width: 0, height: 0});
@@ -42,25 +51,19 @@ const Popup = ({ popupState,  popupBtnRef, children }) => {
         x: window.innerWidth / 2, 
         y: window.innerHeight / 2
       });
-
-      if (popupContent.current) {
-        setContentSize({
-          width: popupContent.current.offsetWidth,
-          height: popupContent.current.offsetHeight
-        });
-      }
+      updateContentSize();
     })
   }, []);
+
+  useEffect(() => {
+    updateContentSize();
+  }, [children]);
+
 
 
   useEffect(() => {
     if (thisPopupState !== popupState) {
-      if (popupContent.current) {
-        setContentSize({
-          width: popupContent.current.offsetWidth,
-          height: popupContent.current.offsetHeight
-        });
-      }
+      updateContentSize();
   
       if (thisPopupState === 'closed') {
         console.log(contentSize);

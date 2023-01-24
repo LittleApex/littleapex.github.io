@@ -16,6 +16,9 @@
   margin-right: 20px;
 }
 
+.error div {
+  font-size: 0.7em;
+}
 .error {
   background-color: rgb(214, 109, 105);
   margin-top: 20px;
@@ -28,4 +31,10 @@
   justify-content: start;
   align-items: center;
 }
+
+@media (min-width: 425px) {
+  .error div {
+    font-size: unset;
+  }
+} 
 
