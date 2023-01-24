@@ -1,4 +1,5 @@
 .succes {
+  width: 100%;
   background-color: rgb(121, 184, 141);
   margin-top: 20px;
   height: 70px;
@@ -20,6 +21,7 @@
   font-size: 0.7em;
 }
 .error {
+  width: 100%;
   background-color: rgb(214, 109, 105);
   margin-top: 20px;
   height: 70px;
