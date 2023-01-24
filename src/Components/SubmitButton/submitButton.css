@@ -1,0 +1,23 @@
+.send_btn {
+  width: 100%;
+  height: 60px;
+  background: #F14D34;
+  border-radius: 5px;
+  border:none;
+
+  color:white;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 12px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-top: 20px;
+  transition:0.5s;
+}
+
+ .send_btn:hover, .send_btn:disabled {
+  background: none;
+  cursor:pointer;
+  border: 1px solid #F14D34;
+  transition:0.5s;
+}

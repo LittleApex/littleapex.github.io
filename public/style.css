@@ -677,7 +677,7 @@ header .header_content .header_adv .header_adv_item .big {
     top:-30px;
 }
 
-.input_name, .input_email, .input_tel {
+/* .input_name, .input_email, .input_tel {
     display: block;
     width: 100%;
     height: 55px;
@@ -766,7 +766,7 @@ header .header_content .header_adv .header_adv_item .big {
     cursor:pointer;
     border: 1px solid #F14D34;
     transition:0.5s;
-}
+} */
 
 .request .footer {
     margin-top: 70px;
@@ -1012,6 +1012,14 @@ header .header_content .header_adv .header_adv_item .big {
 .cases a {
     color: #3f52bd;
     text-decoration: none;
+}
+
+.cases .just_text:hover {
+    text-decoration: underline;
+}
+
+.cases a:hover {
+    text-decoration: underline;
 }
 
 /*---reviews----*/
