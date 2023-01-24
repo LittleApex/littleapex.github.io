@@ -1195,7 +1195,13 @@ header .header_content .header_adv .header_adv_item .big {
 }
 
 .partners .partners_wrapper .logo_item img{
-    width: 40%;
+    width: 80%;
+    transition:0.5s;
+}
+
+.partners .partners_wrapper .logo_item img:hover {
+    transform:scale(1.13);
+    transition:0.5s;
 }
 
 /*----FAQ----*/
@@ -1986,8 +1992,7 @@ header .header_content .header_adv .header_adv_item .big {
         height: 155px;
     }
     .partners .partners_wrapper .logo_item img{
-        width: auto;
-        height: auto;
+        width: 80%;
     }
 
     .FAQ .FAQ_title {
