@@ -73,11 +73,16 @@ const Form = () => {
           <input readOnly={blocked} name="email" type="email" className={blocked ? "input_blocked" : ""} placeholder="E-mail" value={email.value} onChange={email.onChange}/>
           <textarea readOnly={blocked} name="comment" placeholder="Ваш комментарий" className={blocked ? "input_blocked" : ""} cols="30" rows="9" value={comment.value} onChange={comment.onChange}></textarea>
 
+    
+
           <div className="check_wrapper">
-              <input type="checkbox" className="check" checked={check} onChange={() =>{setCheck(!check); validateForm();}}/>
-              <div className="check_text">
-                  Отправляя заявку, я даю согласие на <span>обработку своих персональных данных</span>
-              </div>
+            <div>
+              <input type="checkbox" className="checkbox" checked={check} onChange={() =>{setCheck(!check); validateForm();}}/>  
+              <span className="fakecheck"></span>
+            </div>
+            <div className="check_text">
+                Отправляя заявку, я даю согласие на <span>обработку своих персональных данных</span>
+            </div>
           </div> 
 
           <SubmitButton onClick={sendForm}/>

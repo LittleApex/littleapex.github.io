@@ -10,7 +10,7 @@
 .form_wrapper form {
   display: flex;
   flex-flow: column nowrap;
-  align-items: center;
+  align-items: start;
   justify-content: center;
   width: 100%;
   box-sizing: border-box;
@@ -91,13 +91,6 @@ textarea {
   margin-top: 15px;
 }
 
-.check {
-  width: 25px;
-  height: 25px;
-  background: none;
-  border: 13px solid #295286b6;
-}
-
 .check_text {
   font-weight: 400;
   font-size: 11px;
@@ -136,3 +129,42 @@ textarea {
     width: 60vw;
   }  
 } 
+
+
+.checkbox {
+  position: absolute; 
+  opacity: 0;
+  width: 20px;
+  height: 20px;
+  z-index: 1;
+}
+
+.fakecheck {
+  display: inline-block;
+  box-sizing: border-box;
+  width: 25px;
+  height: 25px;
+  border: 2px solid rgb(134,135,141);
+  border-radius: 5px;
+  position: relative;
+  background-color: rgb(18,20,32);
+}
+
+.fakecheck::before {
+  content: "";
+  position: absolute;
+  display: block;
+  top: 24%;
+  left: 14%;
+  display: block;
+  width: 16px;
+  height: 12px;
+  background-image: url(checkbox.png);
+  opacity: 0;
+  transition: .3s;
+}
+
+.checkbox:checked + .fakecheck::before {
+  opacity: 1;
+}
+
