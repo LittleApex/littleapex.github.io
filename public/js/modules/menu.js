@@ -18,7 +18,7 @@ function menu() {
 
     menus.eq(i).mouseleave(function(e) {
       if (!openedStatic) {
-        focusedMenu.toggleClass('menu_add_open');
+        focusedMenu?.toggleClass('menu_add_open');
         focusedMenu = null;
         menuBtns.attr('disabled', false);
         openedStatic = null;
@@ -54,6 +54,15 @@ function menu() {
   $('.header_menu_sign').click(function() {
     $('.header_add_mob').slideToggle('slow');
   });
+
+  //menu links
+  $(document).ready(function () {
+    $('.header_menu a').click(function () {
+        $('.header_menu a').removeClass("current");
+        $(this).addClass('current');
+    });
+});
+
 }
 
 
