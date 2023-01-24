@@ -5,6 +5,7 @@ import FAQ from './modules/FAQ.js';
 import scroll from './modules/scroll.js';
 
 window.addEventListener('DOMContentLoaded', () => {
+  history.scrollRestoration = 'manual';
   menu();
   carousel();
   partners();
